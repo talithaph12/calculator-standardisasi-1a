@@ -413,7 +413,7 @@ with col2:
                     )
 
 # =====================================
-# TRANSPARANSI
+# TRANSPARANSI PERHITUNGAN
 # =====================================
 st.divider()
 
@@ -451,7 +451,7 @@ if metode != "Kompleksometri":
         '''
     )
 
-    st.write("### Perhitungan N1")
+    st.write("### Perhitungan Normalitas 1")
 
     st.write(
         f"N1 = {massa_mg:.2f} / "
@@ -460,9 +460,11 @@ if metode != "Kompleksometri":
         f"{BE_input:.4f})"
     )
 
-    st.write(f"N1 = {N1:.4f} N")
+    st.write(
+        f"N1 = {N1:.4f} N"
+    )
 
-    st.write("### Perhitungan N2")
+    st.write("### Perhitungan Normalitas 2")
 
     st.write(
         f"N2 = {massa_mg:.2f} / "
@@ -471,7 +473,9 @@ if metode != "Kompleksometri":
         f"{BE_input:.4f})"
     )
 
-    st.write(f"N2 = {N2:.4f} N")
+    st.write(
+        f"N2 = {N2:.4f} N"
+    )
 
     st.write("### Perhitungan Rerata")
 
@@ -527,7 +531,7 @@ else:
         '''
     )
 
-    st.write("### Perhitungan M1")
+    st.write("### Perhitungan Molaritas 1")
 
     st.write(
         f"M1 = {massa_mg:.2f} / "
@@ -536,9 +540,11 @@ else:
         f"{BM_input:.4f})"
     )
 
-    st.write(f"M1 = {M1:.4f} M")
+    st.write(
+        f"M1 = {M1:.4f} M"
+    )
 
-    st.write("### Perhitungan M2")
+    st.write("### Perhitungan Molaritas 2")
 
     st.write(
         f"M2 = {massa_mg:.2f} / "
@@ -547,7 +553,9 @@ else:
         f"{BM_input:.4f})"
     )
 
-    st.write(f"M2 = {M2:.4f} M")
+    st.write(
+        f"M2 = {M2:.4f} M"
+    )
 
     st.write("### Perhitungan Rerata")
 
