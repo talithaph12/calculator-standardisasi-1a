@@ -4,7 +4,7 @@ import streamlit as st
 # CONFIG PAGE
 # =========================================
 st.set_page_config(
-    page_title="🧪 Calculator Standardisasi Larutan",
+    page_title="Calculator Standardisasi Larutan",
     page_icon="🧪",
     layout="wide"
 )
