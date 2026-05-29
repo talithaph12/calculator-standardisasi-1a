@@ -412,63 +412,178 @@ with col2:
                         """
                     )
 
-            # =====================================
-            # TRANSPARANSI
-            # =====================================
-            st.divider()
+# =====================================
+# TRANSPARANSI
+# =====================================
+st.divider()
 
-            st.markdown("## 🧮 Transparansi Perhitungan")
+st.markdown("## 🧮 Transparansi Perhitungan")
 
-            if metode != "Kompleksometri":
+if metode != "Kompleksometri":
 
-                st.latex(
-                    r'''
-                    BE = \frac{BM}{Valensi}
-                    '''
-                )
+    st.write("### Rumus Berat Ekuivalen")
 
-                st.write(
-                    f"BE = {BM_input} / {valensi_input}"
-                )
+    st.latex(
+        r'''
+        BE = \frac{BM}{Valensi}
+        '''
+    )
 
-                st.write(
-                    f"BE = {BE_input:.4f} mg/mgrek"
-                )
+    st.write(
+        f"BE = {BM_input} / "
+        f"{valensi_input}"
+    )
 
-                st.latex(
-                    r'''
-                    N =
-                    \frac{
-                    massa\ standar\ baku
-                    }{
-                    FP \times Volume \times BE
-                    }
-                    '''
-                )
+    st.write(
+        f"BE = {BE_input:.4f} mg/mgrek"
+    )
 
-            else:
+    st.write("### Rumus Normalitas")
 
-                st.latex(
-                    r'''
-                    M =
-                    \frac{
-                    massa\ standar\ baku
-                    }{
-                    FP \times Volume \times BM
-                    }
-                    '''
-                )
+    st.latex(
+        r'''
+        N =
+        \frac{
+        massa\ standar\ baku
+        }{
+        FP \times Volume \times BE
+        }
+        '''
+    )
 
-            st.latex(
-                r'''
-                \%RPD =
-                \left|
-                \frac{
-                X_1 - X_2
-                }{
-                X_{rerata}
-                }
-                \right|
-                \times 100\%
-                '''
-            )
+    st.write("### Perhitungan N1")
+
+    st.write(
+        f"N1 = {massa_mg:.2f} / "
+        f"({FP:.2f} × "
+        f"{vol1:.2f} × "
+        f"{BE_input:.4f})"
+    )
+
+    st.write(f"N1 = {N1:.4f} N")
+
+    st.write("### Perhitungan N2")
+
+    st.write(
+        f"N2 = {massa_mg:.2f} / "
+        f"({FP:.2f} × "
+        f"{vol2:.2f} × "
+        f"{BE_input:.4f})"
+    )
+
+    st.write(f"N2 = {N2:.4f} N")
+
+    st.write("### Perhitungan Rerata")
+
+    st.write(
+        f"Rerata = "
+        f"({N1:.4f} + {N2:.4f}) / 2"
+    )
+
+    st.write(
+        f"Rerata = {N_rata:.4f} N"
+    )
+
+    st.write("### Rumus %RPD")
+
+    st.latex(
+        r'''
+        \%RPD =
+        \left|
+        \frac{
+        X_1 - X_2
+        }{
+        X_{rerata}
+        }
+        \right|
+        \times 100\%
+        '''
+    )
+
+    st.write(
+        f"%RPD = |"
+        f"({N1:.4f} - "
+        f"{N2:.4f}) / "
+        f"{N_rata:.4f}"
+        f"| × 100%"
+    )
+
+    st.write(
+        f"%RPD = {RPD:.2f}%"
+    )
+
+else:
+
+    st.write("### Rumus Molaritas")
+
+    st.latex(
+        r'''
+        M =
+        \frac{
+        massa\ standar\ baku
+        }{
+        FP \times Volume \times BM
+        }
+        '''
+    )
+
+    st.write("### Perhitungan M1")
+
+    st.write(
+        f"M1 = {massa_mg:.2f} / "
+        f"({FP:.2f} × "
+        f"{vol1:.2f} × "
+        f"{BM_input:.4f})"
+    )
+
+    st.write(f"M1 = {M1:.4f} M")
+
+    st.write("### Perhitungan M2")
+
+    st.write(
+        f"M2 = {massa_mg:.2f} / "
+        f"({FP:.2f} × "
+        f"{vol2:.2f} × "
+        f"{BM_input:.4f})"
+    )
+
+    st.write(f"M2 = {M2:.4f} M")
+
+    st.write("### Perhitungan Rerata")
+
+    st.write(
+        f"Rerata = "
+        f"({M1:.4f} + {M2:.4f}) / 2"
+    )
+
+    st.write(
+        f"Rerata = {M_rata:.4f} M"
+    )
+
+    st.write("### Rumus %RPD")
+
+    st.latex(
+        r'''
+        \%RPD =
+        \left|
+        \frac{
+        X_1 - X_2
+        }{
+        X_{rerata}
+        }
+        \right|
+        \times 100\%
+        '''
+    )
+
+    st.write(
+        f"%RPD = |"
+        f"({M1:.4f} - "
+        f"{M2:.4f}) / "
+        f"{M_rata:.4f}"
+        f"| × 100%"
+    )
+
+    st.write(
+        f"%RPD = {RPD:.2f}%"
+    )
